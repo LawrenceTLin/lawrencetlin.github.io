@@ -47,9 +47,9 @@
         
         .profile-image {
             width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            height: 200px; /* Changed from 150px to create a portrait rectangle */
             object-fit: cover;
+            /* Removed border-radius: 50%; to make image rectangular */
             background-color: #eee;
         }
         
@@ -138,6 +138,45 @@
             color: #666;
         }
         
+        /* Tooltip styling for the email copy feature */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 140px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -70px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+        
+        .tooltip .tooltiptext.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        
         @media (max-width: 768px) {
             .profile-section {
                 flex-direction: column;
@@ -179,8 +218,11 @@
                 <p>I am a PhD candidate in Physics at Cornell University, specializing in experimental cosmology and low-temperature instrumentation under Professor Mike Niemack. My research focuses on developing advanced machine learning techniques to analyze large-scale time-ordered data from telescopes, with applications in the Simons Observatory and the FYST telescope collaboration. Recently, I have been working on optimizing ultra-efficient neural networks mapped directly to hardware, exploring novel initialization techniques to overcome deep learning challenges. Passionate about bridging physics, AI, and hardware innovation to drive breakthroughs in both cosmology and edge computing.</p>
                 <div class="contact-links">
                     <a href="https://linkedin.com/in/lawrencetlin" target="_blank">LinkedIn</a>
-                    <a href="mailto:ltl32@cornell.edu">Email</a>
                     <a href="https://github.com/lawrencetlin" target="_blank">GitHub</a>
+                    <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a>
+                    <a href="#" class="email-copy tooltip" onclick="copyEmail(event)">Email
+                        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -248,13 +290,42 @@
         <section id="contact">
             <h2>Contact</h2>
             <p>Feel free to reach out if you'd like to connect about research opportunities, collaborations, or discussions about physics, AI, and hardware innovation.</p>
-            <p>Email: <a href="mailto:ltl32@cornell.edu">ltl32@cornell.edu</a></p>
+            <p>Email: <a href="#" class="tooltip" onclick="copyEmail(event)">ltl32@cornell.edu
+                <span class="tooltiptext" id="contactTooltip">Copy to clipboard</span>
+            </a></p>
             <p>LinkedIn: <a href="https://linkedin.com/in/lawrencetlin" target="_blank">linkedin.com/in/lawrencetlin</a></p>
+            <p>Google Scholar: <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank">scholar.google.com</a></p>
         </section>
     </main>
     
     <footer>
         <p>&copy; 2025 Lawrence T. Lin. All rights reserved.</p>
     </footer>
+
+    <script>
+        function copyEmail(event) {
+            event.preventDefault();
+            const email = "ltl32@cornell.edu";
+            navigator.clipboard.writeText(email).then(function() {
+                // Get the tooltip element from the clicked link
+                const tooltip = event.currentTarget.querySelector('.tooltiptext');
+                
+                // Update tooltip text
+                tooltip.textContent = "Copied to clipboard";
+                tooltip.classList.add("show");
+                
+                // Hide tooltip after 2 seconds
+                setTimeout(function() {
+                    tooltip.classList.remove("show");
+                    // Reset tooltip text after fade out
+                    setTimeout(function() {
+                        tooltip.textContent = "Copy to clipboard";
+                    }, 300);
+                }, 2000);
+            }, function(err) {
+                console.error('Could not copy text: ', err);
+            });
+        }
+    </script>
 </body>
 </html>
