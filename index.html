@@ -224,7 +224,7 @@
             <div class="profile-content">
                 <h1>Lawrence T. Lin</h1>
                 <p class="tagline">PhD Candidate in Physics | Cornell University</p>
-                <p>I am a PhD candidate in Physics at Cornell University, specializing in experimental cosmology and low-temperature instrumentation under Professor Mike Niemack. My research focuses on developing advanced machine learning techniques for time-ordered data analysis from cosmological telescopes, with applications in the Simons Observatory and the FYST telescope collaboration. I work on optimizing ultra-efficient neural networks mapped directly to hardware and exploring novel initialization techniques to overcome deep learning challenges. I have extensive experience with detector characterization, cryogenic systems, thermal modeling, and data analysis in the context of mm/sub-mm astronomy. My skills span physics, data science, machine learning, hardware optimization, and thermal engineering.</p>
+                <p>I am a PhD candidate in Physics at Cornell University, specializing in experimental cosmology and low-temperature instrumentation under Professor Mike Niemack. My research focuses on developing advanced machine learning techniques for time-ordered data analysis from cosmological telescopes, with applications in the Simons Observatory and the CCAT-Prime telescope collaboration. I work on optimizing ultra-efficient neural networks mapped directly to hardware and exploring novel initialization techniques to overcome deep learning challenges. I have extensive experience with detector characterization, cryogenic systems, thermal modeling, and data analysis in the context of mm/sub-mm astronomy. My skills span physics, data science, machine learning, hardware optimization, and thermal engineering.</p>
                 <div class="contact-links">
                     <a href="https://linkedin.com/in/lawrencetlin" target="_blank">LinkedIn</a>
                     <a href="https://github.com/lawrencetlin" target="_blank">GitHub</a>
@@ -251,16 +251,6 @@
                     <li>Established detector matching algorithms between resonant frequencies and physical detector positions for kinetic inductance detectors (KIDs)</li>
                     <li>Implemented and managed cryogenic monitoring systems using Python, Grafana, Docker, and OCS, enabling remote operation of complex cryogenic systems</li>
 
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <h3>Previous Research Experience</h3>
-                <p class="company">Prior Institutions</p>
-                <p class="date">Before 2022</p>
-                <ul>
-                    <li>Contributed to physics research projects focusing on experimental methodologies</li>
-                    <li>Developed foundational skills in data analysis and instrumentation</li>
                 </ul>
             </div>
         </section>
@@ -357,20 +347,25 @@
             event.preventDefault();
             const email = "ltl32@cornell.edu";
             navigator.clipboard.writeText(email).then(function() {
-                // Get the tooltip element from the clicked link
-                const tooltip = event.currentTarget.querySelector('.tooltiptext');
+                // Create a temporary message element
+                const message = document.createElement('div');
+                message.textContent = "Copied to clipboard!";
+                message.style.position = 'fixed';
+                message.style.left = '50%';
+                message.style.top = '20px';
+                message.style.transform = 'translateX(-50%)';
+                message.style.backgroundColor = '#333';
+                message.style.color = 'white';
+                message.style.padding = '10px 20px';
+                message.style.borderRadius = '4px';
+                message.style.zIndex = '1000';
                 
-                // Update tooltip text
-                tooltip.textContent = "Copied to clipboard";
-                tooltip.classList.add("show");
+                // Add the message to the body
+                document.body.appendChild(message);
                 
-                // Hide tooltip after 2 seconds
+                // Remove the message after 2 seconds
                 setTimeout(function() {
-                    tooltip.classList.remove("show");
-                    // Reset tooltip text after fade out
-                    setTimeout(function() {
-                        tooltip.textContent = "Copy to clipboard";
-                    }, 300);
+                    document.body.removeChild(message);
                 }, 2000);
             }, function(err) {
                 console.error('Could not copy text: ', err);
