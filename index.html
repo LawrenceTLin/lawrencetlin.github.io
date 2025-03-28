@@ -177,6 +177,14 @@
             opacity: 1;
         }
         
+        .publication-item {
+            margin-bottom: 20px;
+        }
+
+        .award-item {
+            margin-bottom: 15px;
+        }
+        
         @media (max-width: 768px) {
             .profile-section {
                 flex-direction: column;
@@ -203,6 +211,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -215,7 +224,7 @@
             <div class="profile-content">
                 <h1>Lawrence T. Lin</h1>
                 <p class="tagline">PhD Candidate in Physics | Cornell University</p>
-                <p>I am a PhD candidate in Physics at Cornell University, specializing in experimental cosmology and low-temperature instrumentation under Professor Mike Niemack. My research focuses on developing advanced machine learning techniques to analyze large-scale time-ordered data from telescopes, with applications in the Simons Observatory and the FYST telescope collaboration. Recently, I have been working on optimizing ultra-efficient neural networks mapped directly to hardware, exploring novel initialization techniques to overcome deep learning challenges. Passionate about bridging physics, AI, and hardware innovation to drive breakthroughs in both cosmology and edge computing.</p>
+                <p>I am a PhD candidate in Physics at Cornell University, specializing in experimental cosmology and low-temperature instrumentation under Professor Mike Niemack. My research focuses on developing advanced machine learning techniques for time-ordered data analysis from cosmological telescopes, with applications in the Simons Observatory and the FYST telescope collaboration. I work on optimizing ultra-efficient neural networks mapped directly to hardware and exploring novel initialization techniques to overcome deep learning challenges. I have extensive experience with detector characterization, cryogenic systems, thermal modeling, and data analysis in the context of mm/sub-mm astronomy. My skills span physics, data science, machine learning, hardware optimization, and thermal engineering.</p>
                 <div class="contact-links">
                     <a href="https://linkedin.com/in/lawrencetlin" target="_blank">LinkedIn</a>
                     <a href="https://github.com/lawrencetlin" target="_blank">GitHub</a>
@@ -235,11 +244,13 @@
                 <p class="company">Cornell University</p>
                 <p class="date">February 2022 - Present</p>
                 <ul>
-                    <li>Developing advanced machine learning techniques to analyze large-scale time-ordered data from telescopes</li>
-                    <li>Working on applications in the Simons Observatory and the FYST telescope collaboration</li>
-                    <li>Optimizing ultra-efficient neural networks mapped directly to hardware</li>
-                    <li>Exploring novel initialization techniques to overcome deep learning challenges</li>
-                    <li>Conducting research in experimental cosmology and low-temperature instrumentation under Professor Mike Niemack</li>
+                    <li>Lead thermal design, testing, and validation for CCAT-Prime/FYST Mod-Cam cryogenic instrument, achieving temperature stability of 0.1K/day at 40K stage and 0.2mK at 100mK stage</li>
+                    <li>Developed machine learning models for detector data quality assessment and transient signal identification for the Simons Observatory (SO) and CCAT-Prime, improving data processing efficiency</li>
+                    <li>Conducted extensive cryogenic testing of detector arrays, including optimization of readout parameters, characterization of detector noise properties, and analysis of optical loading</li>
+                    <li>Designed and executed experiments to measure thermal conductivity of materials at cryogenic temperatures, informing cryostat design decisions</li>
+                    <li>Established detector matching algorithms between resonant frequencies and physical detector positions for kinetic inductance detectors (KIDs)</li>
+                    <li>Implemented and managed cryogenic monitoring systems using Python, Grafana, Docker, and OCS, enabling remote operation of complex cryogenic systems</li>
+
                 </ul>
             </div>
             
@@ -258,15 +269,41 @@
             <h2>Projects</h2>
             
             <div class="project-item">
-                <h3>Neural Network Optimization for Cosmological Data Analysis</h3>
+                <h3>Machine Learning for Detector Quality Assessment</h3>
                 <p class="date">2023-Present</p>
-                <p>Developing ultra-efficient neural networks optimized for analyzing astronomical data from the Simons Observatory and FYST telescopes. Implementing hardware-specific optimizations to improve computational efficiency while maintaining high accuracy in data processing.</p>
+                <p>Developing transformer-based models to identify "bad" detectors from time-ordered data, enabling automatic data quality assessment. This model incorporates spatial and frequency-domain information to detect various detector failure modes and readout issues for both transition edge sensor (TES) and kinetic inductance detector (KID) technologies. Implemented using PyTorch, the system is designed to scale to handle tens of thousands of detectors with minimal human intervention.</p>
             </div>
             
             <div class="project-item">
-                <h3>Novel Initialization Techniques for Deep Learning in Physics Applications</h3>
+                <h3>Mod-Cam Cryogenic System Design and Testing</h3>
                 <p class="date">2022-Present</p>
-                <p>Researching and developing new initialization methods to overcome challenges in training deep neural networks for physics applications. Focusing on improving convergence and stability for complex models used in cosmological research.</p>
+                <p>Led the thermal design and testing of Mod-Cam for CCAT-Prime/FYST, a pathfinder instrument with sub-100mK operating temperature. Conducted extensive thermal modeling, including FEA simulations and analytical calculations to optimize heat strap designs. Characterized thermal conductivity of different copper alloys through RRR measurements. Achieved temperature stability of 0.1K/day at 40K and sub-mK stability at 100mK, enabling high-sensitivity detector characterization.</p>
+            </div>
+            
+            <div class="project-item">
+                <h3>Detector Matching Algorithm for Kinetic Inductance Detectors</h3>
+                <p class="date">2024-Present</p>
+                <p>Developed algorithms to match resonant frequencies with physical detector positions for KID arrays, accounting for frequency shifts due to optical loading and bath temperature changes. This work is critical for astronomical observations as it enables precise mapping between detector signals and sky positions, improving map-making procedures and astronomical data quality.</p>
+            </div>
+            
+            <div class="project-item">
+                <h3>Remote Cryogenic Operation Systems</h3>
+                <p class="date">2023-Present</p>
+                <p>Designed and implemented monitoring and control systems for remote operation of complex cryogenic systems, including dilution refrigerators at high-altitude astronomical sites. Developed Python-based monitoring tools with Grafana visualization and alert systems. Created reliable protocols for remote operation, power recovery, and emergency handling of cryogenic equipment.</p>
+            </div>
+            
+            <div class="project-item">
+                <h3>Optical Characterization of Ultra-High Frequency Detector Arrays</h3>
+                <p class="date">2022-Present</p>
+                <p>Conducted comprehensive optical testing of detector arrays for the Simons Observatory, characterizing noise properties, optical efficiency, and saturation power. Analyzed data to validate detector models and inform future design improvements. Developed specialized cold load testing procedures for precise calibration of mm/sub-mm detectors.</p>
+            </div>
+        </section>
+        
+        <section id="publications">
+            <h2>Publications & Presentations</h2>
+            
+            <div class="publication-item">
+                <p>For a complete list of my publications and collaborative work, please see my <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar profile</a>.</p>
             </div>
         </section>
         
@@ -275,21 +312,34 @@
             
             <div class="skills">
                 <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">PyTorch</span>
                 <span class="skill-tag">Deep Neural Networks</span>
-                <span class="skill-tag">Experimental Cosmology</span>
-                <span class="skill-tag">Data Analysis</span>
-                <span class="skill-tag">Low-Temperature Instrumentation</span>
+                <span class="skill-tag">Transformer Models</span>
                 <span class="skill-tag">Python</span>
+                <span class="skill-tag">Data Analysis</span>
+                <span class="skill-tag">Experimental Design</span>
+                <span class="skill-tag">Cryogenics</span>
+                <span class="skill-tag">Thermal Modeling</span>
+                <span class="skill-tag">Finite Element Analysis</span>
+                <span class="skill-tag">Low-Temperature Instrumentation</span>
+                <span class="skill-tag">Detector Characterization</span>
                 <span class="skill-tag">Hardware Optimization</span>
-                <span class="skill-tag">Telescope Data Processing</span>
+                <span class="skill-tag">Time Series Analysis</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Statistical Methods</span>
+                <span class="skill-tag">Signal Processing</span>
+                <span class="skill-tag">Astronomical Data Processing</span>
+                <span class="skill-tag">Scientific Computing</span>
+                <span class="skill-tag">Quantitative Analysis</span>
+                <span class="skill-tag">CAD Design</span>
                 <span class="skill-tag">Physics Research</span>
-                <span class="skill-tag">Edge Computing</span>
             </div>
         </section>
         
         <section id="contact">
             <h2>Contact</h2>
-            <p>Feel free to reach out if you'd like to connect about research opportunities, collaborations, or discussions about physics, AI, and hardware innovation.</p>
+            <p>Feel free to reach out if you'd like to connect about research opportunities, collaborations, or discussions about physics, data science, machine learning, and hardware innovation.</p>
             <p>Email: <a href="#" class="tooltip" onclick="copyEmail(event)">ltl32@cornell.edu
                 <span class="tooltiptext" id="contactTooltip">Copy to clipboard</span>
             </a></p>
