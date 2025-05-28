@@ -1,371 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MTZ1470SG5"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-MTZ1470SG5');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lawrence T. Lin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Basic reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-         
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
         }
-        
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin: 50px 0;
-        }
-        
-        .profile-image {
-            width: 300px;
-            height: 300px; /* Changed from 150px to create a portrait rectangle */
-            object-fit: cover;
-            /* Removed border-radius: 50%; to make image rectangular */
-            background-color: #eee;
-        }
-        
-        .profile-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .profile-content .tagline {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        
-        nav a:hover {
-            color: #0066cc;
-        }
-        
-        section {
-            margin: 40px 0;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        
-        .experience-item, .project-item {
-            margin-bottom: 30px;
-        }
-        
-        .experience-item h3, .project-item h3 {
-            margin-bottom: 10px;
-        }
-        
-        .date {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .skill-tag {
-            background-color: #eee;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .contact-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .contact-links a {
-            text-decoration: none;
-            color: #0066cc;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid #eee;
-            margin-top: 50px;
-            color: #666;
-        }
-        
-        /* Tooltip styling for the email copy feature */
-        .tooltip {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 140px;
-            background-color: #555;
-            color: #fff;
-            text-align: center;
-            border-radius: 6px;
-            padding: 5px;
-            position: absolute;
-            z-index: 1;
-            bottom: 150%;
+        /* Custom styles for the copy message if needed, though Tailwind can handle most */
+        .copy-message {
+            position: fixed;
             left: 50%;
-            margin-left: -70px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .tooltip .tooltiptext::after {
-            content: "";
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #555 transparent transparent transparent;
-        }
-        
-        .tooltip .tooltiptext.show {
-            visibility: visible;
-            opacity: 1;
-        }
-        
-        .publication-item {
-            margin-bottom: 20px;
-        }
-
-        .award-item {
-            margin-bottom: 15px;
-        }
-        
-        @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            header {
-                flex-direction: column;
-                gap: 20px;
-            }
+            top: 20px;
+            transform: translateX(-50%);
+            background-color: #2d3748; /* Tailwind gray-800 */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 0.375rem; /* Tailwind rounded-md */
+            z-index: 50;
+            font-size: 0.875rem; /* Tailwind text-sm */
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="logo">LTL</div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+<body class="bg-slate-50 text-slate-800">
+    <header class="bg-white shadow-sm sticky top-0 z-40">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold text-sky-600">
+                    <a href="#">LTL</a>
+                </div>
+                <nav class="hidden md:flex space-x-6 lg:space-x-8">
+                    <a href="#about" class="text-slate-600 hover:text-sky-600 font-medium">About</a>
+                    <a href="#experience" class="text-slate-600 hover:text-sky-600 font-medium">Experience</a>
+                    <a href="#projects" class="text-slate-600 hover:text-sky-600 font-medium">Projects</a>
+                    <a href="#publications" class="text-slate-600 hover:text-sky-600 font-medium">Publications</a>
+                    <a href="#skills" class="text-slate-600 hover:text-sky-600 font-medium">Skills</a>
+                    <a href="#contact" class="text-slate-600 hover:text-sky-600 font-medium">Contact</a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-600 hover:text-sky-600 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#about" class="block py-2 px-4 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600">About</a>
+            <a href="#experience" class="block py-2 px-4 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600">Experience</a>
+            <a href="#projects" class="block py-2 px-4 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600">Projects</a>
+            <a href="#publications" class="block py-2 px-4 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600">Publications</a>
+            <a href="#skills" class="block py-2 px-4 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600">Skills</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-slate-600 hover:bg-sky-50 hover:text-sky-600">Contact</a>
+        </div>
     </header>
-    
-    <main>
-        <section class="profile-section" id="about">
-            <img src="images/headshot.png" alt="Lawrence T. Lin" class="profile-image">
-            <div class="profile-content">
-                <h1>Lawrence T. Lin</h1>
-                <p class="tagline">PhD Candidate in Physics | Cornell University</p>
-                <p>I am a PhD candidate in Physics at Cornell University, specializing in experimental cosmology and low-temperature instrumentation under Professor Mike Niemack. My research focuses on developing advanced machine learning techniques for time-ordered data analysis from cosmological telescopes, with applications in the Simons Observatory and the CCAT-Prime telescope collaboration. I work on optimizing ultra-efficient neural networks mapped directly to hardware and exploring novel initialization techniques to overcome deep learning challenges. I have extensive experience with detector characterization, cryogenic systems, thermal modeling, and data analysis in the context of mm/sub-mm astronomy. My skills span physics, data science, machine learning, hardware optimization, and thermal engineering.</p>
-                <div class="contact-links">
-                    <a href="https://linkedin.com/in/lawrencetlin" target="_blank">LinkedIn</a>
-                    <a href="https://github.com/lawrencetlin" target="_blank">GitHub</a>
-                    <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar</a>
-                    <a href="#" class="email-copy tooltip" onclick="copyEmail(event)">Email
-                        <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
-                    </a>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <section id="about" class="pt-16 -mt-16 mb-12 md:mb-16 scroll-mt-16"> <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 bg-white p-6 md:p-10 rounded-xl shadow-lg">
+                <img src="https://placehold.co/300x300/E2E8F0/4A5568?text=LTL" alt="Lawrence T. Lin" class="w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 object-cover rounded-full shadow-md mx-auto md:mx-0 flex-shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/300x300/E2E8F0/4A5568?text=Image+Not+Found';">
+                <div class="profile-content text-center md:text-left">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-2">Lawrence T. Lin</h1>
+                    <p class="text-lg sm:text-xl text-sky-600 font-medium mb-4">PhD Candidate in Physics | Cornell University</p>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        I am a PhD candidate in Physics at Cornell University, specializing in experimental cosmology and low-temperature instrumentation under Professor Mike Niemack. My research focuses on developing advanced machine learning techniques for time-ordered data analysis from cosmological telescopes, with applications in the Simons Observatory and the CCAT-Prime telescope collaboration. I work on optimizing ultra-efficient neural networks mapped directly to hardware and exploring novel initialization techniques to overcome deep learning challenges. I have extensive experience with detector characterization, cryogenic systems, thermal modeling, and data analysis in the context of mm/sub-mm astronomy. My skills span physics, data science, machine learning, hardware optimization, and thermal engineering.
+                    </p>
+                    <div class="contact-links flex justify-center md:justify-start space-x-4">
+                        <a href="https://linkedin.com/in/lawrencetlin" target="_blank" class="text-sky-600 hover:text-sky-700 transition-colors duration-300">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <a href="https://github.com/lawrencetlin" target="_blank" class="text-sky-600 hover:text-sky-700 transition-colors duration-300">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" clip-rule="evenodd"/></svg>
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank" class="text-sky-600 hover:text-sky-700 transition-colors duration-300">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.242 12.395c.04-.08.08-.16.12-.24.85-1.61 2.88-2.655 5.03-2.655h.005c1.81 0 3.4.71 4.58 1.89l-1.42 1.41c-.83-.83-1.95-1.34-3.16-1.34h-.005c-1.49 0-2.85.69-3.64 1.76.28.03.56.06.84.06.76 0 1.5-.13 2.19-.38l.65 1.83c-.87.31-1.82.48-2.84.48-.43 0-.86-.04-1.28-.11zm6.758-5.395c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2zm6.5-2.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm-13-2.5c-.28 0-.5.22-.5.5s.22.5.5.5.5-.22.5-.5-.22-.5-.5-.5zm5.5-5h2v2h-2v-2zm11 5.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5.22.5.5.5.5-.22.5-.5zm-16 0c0-.28-.22-.5-.5-.5s-.5.22-.5.5.22.5.5.5.5-.22.5-.5zM12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                        </a>
+                        <button onclick="copyEmail(event, 'myTooltip')" class="text-sky-600 hover:text-sky-700 transition-colors duration-300 relative group">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                            <span id="myTooltip" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max px-2 py-1 bg-slate-700 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                Copy to clipboard
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <section id="experience">
-            <h2>Experience</h2>
-            
-            <div class="experience-item">
-                <h3>Graduate Research Assistant</h3>
-                <p class="company">Cornell University</p>
-                <p class="date">February 2022 - Present</p>
-                <ul>
-                    <li>Lead thermal design, testing, and validation for CCAT-Prime/FYST Mod-Cam cryogenic instrument, achieving temperature stability of 0.1K/day at 40K stage and 0.2mK at 100mK stage</li>
-                    <li>Developed machine learning models for detector data quality assessment and transient signal identification for the Simons Observatory (SO) and CCAT-Prime, improving data processing efficiency</li>
-                    <li>Conducted extensive cryogenic testing of detector arrays, including optimization of readout parameters, characterization of detector noise properties, and analysis of optical loading</li>
-                    <li>Designed and executed experiments to measure thermal conductivity of materials at cryogenic temperatures, informing cryostat design decisions</li>
-                    <li>Established detector matching algorithms between resonant frequencies and physical detector positions for kinetic inductance detectors (KIDs)</li>
-                    <li>Implemented and managed cryogenic monitoring systems using Python, Grafana, Docker, and OCS, enabling remote operation of complex cryogenic systems</li>
 
-                </ul>
+        <section id="experience" class="pt-16 -mt-16 mb-12 md:mb-16 scroll-mt-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 md:mb-8 pb-2 border-b-2 border-sky-200">Experience</h2>
+            <div class="space-y-8">
+                <div class="experience-item bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-1">Graduate Research Assistant</h3>
+                    <p class="company text-md text-slate-600 mb-1">Cornell University</p>
+                    <p class="date text-sm text-slate-500 mb-3">February 2022 - Present</p>
+                    <ul class="list-disc list-inside text-slate-600 space-y-2 pl-2">
+                        <li>Lead thermal design, testing, and validation for CCAT-Prime/FYST Mod-Cam cryogenic instrument, achieving temperature stability of 0.1K/day at 40K stage and 0.2mK at 100mK stage.</li>
+                        <li>Developed machine learning models for detector data quality assessment and transient signal identification for the Simons Observatory (SO) and CCAT-Prime, improving data processing efficiency.</li>
+                        <li>Conducted extensive cryogenic testing of detector arrays, including optimization of readout parameters, characterization of detector noise properties, and analysis of optical loading.</li>
+                        <li>Designed and executed experiments to measure thermal conductivity of materials at cryogenic temperatures, informing cryostat design decisions.</li>
+                        <li>Established detector matching algorithms between resonant frequencies and physical detector positions for kinetic inductance detectors (KIDs).</li>
+                        <li>Implemented and managed cryogenic monitoring systems using Python, Grafana, Docker, and OCS, enabling remote operation of complex cryogenic systems.</li>
+                    </ul>
+                </div>
+                </div>
+        </section>
+
+        <section id="projects" class="pt-16 -mt-16 mb-12 md:mb-16 scroll-mt-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 md:mb-8 pb-2 border-b-2 border-sky-200">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="project-item bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-1">Machine Learning for Detector Quality Assessment</h3>
+                    <p class="date text-sm text-slate-500 mb-3">2023-Present</p>
+                    <p class="text-slate-600 leading-relaxed">Developing transformer-based models to identify "bad" detectors from time-ordered data, enabling automatic data quality assessment. This model incorporates spatial and frequency-domain information to detect various detector failure modes and readout issues for both transition edge sensor (TES) and kinetic inductance detector (KID) technologies. Implemented using PyTorch, the system is designed to scale to handle tens of thousands of detectors with minimal human intervention.</p>
+                </div>
+                <div class="project-item bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-1">Detector Matching Algorithm for KIDs</h3>
+                    <p class="date text-sm text-slate-500 mb-3">2024-Present</p>
+                    <p class="text-slate-600 leading-relaxed">Developed algorithms to match resonant frequencies with physical detector positions for KID arrays, accounting for frequency shifts due to optical loading and bath temperature changes. This work is critical for astronomical observations as it enables precise mapping between detector signals and sky positions, improving map-making procedures and astronomical data quality.</p>
+                </div>
+                <div class="project-item bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-1">Optical Characterization of UHF Detector Arrays</h3>
+                    <p class="date text-sm text-slate-500 mb-3">2022-Present</p>
+                    <p class="text-slate-600 leading-relaxed">Conducted comprehensive optical testing of detector arrays for the Simons Observatory, characterizing noise properties, optical efficiency, and saturation power. Analyzed data to validate detector models and inform future design improvements. Developed specialized cold load testing procedures for precise calibration of mm/sub-mm detectors.</p>
+                </div>
+                <div class="project-item bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-xl font-semibold text-sky-700 mb-1">Mod-Cam Cryogenic System Design and Testing</h3>
+                    <p class="date text-sm text-slate-500 mb-3">2022-Present</p>
+                    <p class="text-slate-600 leading-relaxed">Led the thermal design and testing of Mod-Cam for CCAT-Prime/FYST, a pathfinder instrument with sub-100mK operating temperature. Conducted extensive thermal modeling, including FEA simulations and analytical calculations to optimize heat strap designs. Characterized thermal conductivity of different copper alloys through RRR measurements. Achieved temperature stability of 0.1K/day at 40K and sub-mK stability at 100mK, enabling high-sensitivity detector characterization.</p>
+                </div>
+                 <div class="project-item bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 md:col-span-2"> <h3 class="text-xl font-semibold text-sky-700 mb-1">SEC Risk Factor Tracker: Quantitative Analysis of Financial Disclosures</h3>
+                    <p class="date text-sm text-slate-500 mb-3">2023-Present</p>
+                    <p class="text-slate-600 leading-relaxed">Developing a sophisticated framework for analyzing risk factors in SEC 10-K filings using large language models and retrieval-augmented generation. Implementing an end-to-end pipeline that extracts, processes, and evaluates company risk disclosures to predict market volatility and detect strategic shifts. The system employs industry-standard methodologies mirroring hedge fund workflows, incorporating advanced techniques to address factor decay and adverse selection challenges. Currently finalizing the backtesting infrastructure with targets of achieving Sharpe ratios exceeding 1.5 on trading strategies based on risk factor evolution.</p>
+                </div>
             </div>
         </section>
-        
-        <section id="projects">
-            <h2>Projects</h2>
-            
-            <div class="project-item">
-                <h3>Machine Learning for Detector Quality Assessment</h3>
-                <p class="date">2023-Present</p>
-                <p>Developing transformer-based models to identify "bad" detectors from time-ordered data, enabling automatic data quality assessment. This model incorporates spatial and frequency-domain information to detect various detector failure modes and readout issues for both transition edge sensor (TES) and kinetic inductance detector (KID) technologies. Implemented using PyTorch, the system is designed to scale to handle tens of thousands of detectors with minimal human intervention.</p>
-            </div>
-            
-            
-            <div class="project-item">
-                <h3>Detector Matching Algorithm for Kinetic Inductance Detectors</h3>
-                <p class="date">2024-Present</p>
-                <p>Developed algorithms to match resonant frequencies with physical detector positions for KID arrays, accounting for frequency shifts due to optical loading and bath temperature changes. This work is critical for astronomical observations as it enables precise mapping between detector signals and sky positions, improving map-making procedures and astronomical data quality.</p>
-            </div>
-            
-            <div class="project-item">
-                <h3>Optical Characterization of Ultra-High Frequency Detector Arrays</h3>
-                <p class="date">2022-Present</p>
-                <p>Conducted comprehensive optical testing of detector arrays for the Simons Observatory, characterizing noise properties, optical efficiency, and saturation power. Analyzed data to validate detector models and inform future design improvements. Developed specialized cold load testing procedures for precise calibration of mm/sub-mm detectors.</p>
-            </div>
-            <div class="project-item">
-                <h3>Mod-Cam Cryogenic System Design and Testing</h3>
-                <p class="date">2022-Present</p>
-                <p>Led the thermal design and testing of Mod-Cam for CCAT-Prime/FYST, a pathfinder instrument with sub-100mK operating temperature. Conducted extensive thermal modeling, including FEA simulations and analytical calculations to optimize heat strap designs. Characterized thermal conductivity of different copper alloys through RRR measurements. Achieved temperature stability of 0.1K/day at 40K and sub-mK stability at 100mK, enabling high-sensitivity detector characterization.</p>
-            </div>
-            <div class="project-item">
-                <h3>SEC Risk Factor Tracker: Quantitative Analysis of Financial Disclosures</h3>
-                <p class="date">2023-Present</p>
-                <p>Developing a sophisticated framework for analyzing risk factors in SEC 10-K filings using large language models and retrieval-augmented generation. Implementing an end-to-end pipeline that extracts, processes, and evaluates company risk disclosures to predict market volatility and detect strategic shifts. The system employs industry-standard methodologies mirroring hedge fund workflows, incorporating advanced techniques to address factor decay and adverse selection challenges. Currently finalizing the backtesting infrastructure with targets of achieving Sharpe ratios exceeding 1.5 on trading strategies based on risk factor evolution.</p>
-              </div>
-        </section>
-        
-        <section id="publications">
-            <h2>Publications & Presentations</h2>
-            
-            <div class="publication-item">
-                <p>For a complete list of my publications and collaborative work, please see my <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank">Google Scholar profile</a>.</p>
+
+        <section id="publications" class="pt-16 -mt-16 mb-12 md:mb-16 scroll-mt-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 md:mb-8 pb-2 border-b-2 border-sky-200">Publications & Presentations</h2>
+            <div class="publication-item bg-white p-6 rounded-lg shadow-md">
+                <p class="text-slate-600 leading-relaxed">For a complete list of my publications and collaborative work, please see my <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank" class="text-sky-600 hover:text-sky-700 font-medium underline hover:no-underline">Google Scholar profile</a>.</p>
             </div>
         </section>
-        
-        <section id="skills">
-            <h2>Skills</h2>
-            
-            <div class="skills">
-                <span class="skill-tag">Machine Learning</span>
-                <span class="skill-tag">PyTorch</span>
-                <span class="skill-tag">Deep Neural Networks</span>
-                <span class="skill-tag">Transformer Models</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Data Analysis</span>
-                <span class="skill-tag">Experimental Design</span>
-                <span class="skill-tag">Cryogenics</span>
-                <span class="skill-tag">Thermal Modeling</span>
-                <span class="skill-tag">Finite Element Analysis</span>
-                <span class="skill-tag">Low-Temperature Instrumentation</span>
-                <span class="skill-tag">Detector Characterization</span>
-                <span class="skill-tag">Hardware Optimization</span>
-                <span class="skill-tag">Time Series Analysis</span>
-                <span class="skill-tag">Statistical Methods</span>
-                <span class="skill-tag">Signal Processing</span>
-                <span class="skill-tag">Astronomical Data Processing</span>
-                <span class="skill-tag">Scientific Computing</span>
-                <span class="skill-tag">Quantitative Analysis</span>
+
+        <section id="skills" class="pt-16 -mt-16 mb-12 md:mb-16 scroll-mt-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 md:mb-8 pb-2 border-b-2 border-sky-200">Skills</h2>
+            <div class="skills flex flex-wrap gap-3">
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Machine Learning</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">PyTorch</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Deep Neural Networks</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Transformer Models</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Python</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Data Analysis</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Experimental Design</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Cryogenics</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Thermal Modeling</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Finite Element Analysis</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Low-Temperature Instrumentation</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Detector Characterization</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Hardware Optimization</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Time Series Analysis</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Statistical Methods</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Signal Processing</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Astronomical Data Processing</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Scientific Computing</span>
+                <span class="skill-tag bg-sky-100 text-sky-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm">Quantitative Analysis</span>
             </div>
         </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out if you'd like to connect about research opportunities, collaborations, or discussions about physics, data science, machine learning, and hardware innovation.</p>
-            <p>Email: <a href="#" class="tooltip" onclick="copyEmail(event)">ltl32@cornell.edu
-                <span class="tooltiptext" id="contactTooltip">Copy to clipboard</span>
-            </a></p>
-            <p>LinkedIn: <a href="https://linkedin.com/in/lawrencetlin" target="_blank">linkedin.com/in/lawrencetlin</a></p>
-            <p>Google Scholar: <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank">scholar.google.com</a></p>
+
+        <section id="contact" class="pt-16 -mt-16 mb-12 md:mb-16 scroll-mt-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 md:mb-8 pb-2 border-b-2 border-sky-200">Contact</h2>
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-md">
+                <p class="text-slate-600 leading-relaxed mb-4">Feel free to reach out if you'd like to connect about research opportunities, collaborations, or discussions about physics, data science, machine learning, and hardware innovation.</p>
+                <div class="space-y-3">
+                    <p class="text-slate-700">
+                        Email: 
+                        <button onclick="copyEmail(event, 'contactTooltip')" class="text-sky-600 hover:text-sky-700 font-medium underline hover:no-underline relative group">
+                            ltl32@cornell.edu
+                            <span id="contactTooltip" class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-max px-2 py-1 bg-slate-700 text-white text-xs rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                                Copy to clipboard
+                            </span>
+                        </button>
+                    </p>
+                    <p class="text-slate-700">LinkedIn: <a href="https://linkedin.com/in/lawrencetlin" target="_blank" class="text-sky-600 hover:text-sky-700 font-medium underline hover:no-underline">linkedin.com/in/lawrencetlin</a></p>
+                    <p class="text-slate-700">Google Scholar: <a href="https://scholar.google.com/citations?user=kp9PVPkAAAAJ&hl=en&authuser=1" target="_blank" class="text-sky-600 hover:text-sky-700 font-medium underline hover:no-underline">scholar.google.com</a></p>
+                </div>
+            </div>
         </section>
     </main>
-    
-    <footer>
-        <p>&copy; 2025 Lawrence T. Lin. All rights reserved.</p>
+
+    <footer class="bg-slate-800 text-slate-300 py-8 text-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <p>&copy; <span id="currentYear"></span> Lawrence T. Lin. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-        function copyEmail(event) {
-            event.preventDefault();
-            const email = "ltl32@cornell.edu";
-            navigator.clipboard.writeText(email).then(function() {
-                // Create a temporary message element
-                const message = document.createElement('div');
-                message.textContent = "Copied to clipboard!";
-                message.style.position = 'fixed';
-                message.style.left = '50%';
-                message.style.top = '20px';
-                message.style.transform = 'translateX(-50%)';
-                message.style.backgroundColor = '#333';
-                message.style.color = 'white';
-                message.style.padding = '10px 20px';
-                message.style.borderRadius = '4px';
-                message.style.zIndex = '1000';
-                
-                // Add the message to the body
-                document.body.appendChild(message);
-                
-                // Remove the message after 2 seconds
-                setTimeout(function() {
-                    document.body.removeChild(message);
-                }, 2000);
-            }, function(err) {
-                console.error('Could not copy text: ', err);
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            // Close mobile menu when a link is clicked
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
             });
         }
+
+        // Email copy function
+        function copyEmail(event, tooltipId) {
+            event.preventDefault();
+            const email = "ltl32@cornell.edu";
+            const tempInput = document.createElement("input");
+            tempInput.style.position = "absolute";
+            tempInput.style.left = "-9999px";
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            let success = false;
+            try {
+                success = document.execCommand('copy');
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(tempInput);
+
+            const tooltip = document.getElementById(tooltipId);
+            const originalText = tooltip ? tooltip.textContent : "Copy to clipboard";
+
+            if (success) {
+                if (tooltip) {
+                    tooltip.textContent = "Copied!";
+                }
+                // Show a more prominent temporary message
+                const message = document.createElement('div');
+                message.textContent = "Email copied to clipboard!";
+                message.className = 'copy-message'; // Apply Tailwind classes or custom style
+                document.body.appendChild(message);
+                
+                setTimeout(() => {
+                    if (tooltip) {
+                        tooltip.textContent = originalText;
+                    }
+                    document.body.removeChild(message);
+                }, 2000);
+            } else {
+                 if (tooltip) {
+                    tooltip.textContent = "Failed to copy";
+                }
+                 setTimeout(() => {
+                    if (tooltip) {
+                        tooltip.textContent = originalText;
+                    }
+                }, 2000);
+            }
+        }
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Smooth scroll for navigation links and offset for sticky header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Get header height (can be dynamic if header height changes)
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 70; // Fallback offset
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
